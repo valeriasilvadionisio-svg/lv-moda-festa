@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVMODAFESTA</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body> 
+    <!-- here to create the website nav area/ <a = link / href = link destination.-->
+    <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>    
+    </nav>
+
+    <h1>Contact us</h1>
+    
+    <!-- Support text for the contact page -->
+<p>Please use the form below to contact us about dresses, sizes, orders, or delivery options.</p>
+
+    <form id="contact-form" class= "contact-form"> <!--to create the form / id= to identify into java-->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"> <!-- type text = normal text / id = indentify / name= name for form-->
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea> <!--to write text. / its not necessary "type" bacause for textare we not use type-->
+
+        <button type="submit">SEND</button>
+
+    </form>
+        <script src="script.js"></script> <!--link to connect javascript file-->
+
+
+    
+</body>
+</html>

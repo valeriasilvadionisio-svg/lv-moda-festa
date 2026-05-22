@@ -1,0 +1,226 @@
+/*Nav menu now */
+
+/*to select nav*/
+nav {
+    background-color: #f8d7da; 
+    padding: 15px; /*create inner spacing so the menu doenst fell too cramped */
+    text-align: center; /*centering the links */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* add a soft shadow under the navigation bar*/
+}
+
+/*nav links, select de <a> links that are inside the nav*/
+nav a {
+    color: #5c1f2d; /* to set the text color of the navigation links */
+    text-decoration: none; /*Remove the underline from the text*/
+    margin: 18px; /*create space between the links*/
+    font-weight: bold; /* Make the navigation text bold */
+    font-size: 18px; /*set the size*/
+}
+
+/*navigation hover effect, i saw the prompt */
+nav a:hover{
+    color: #8b0000; /* Change the link color when the mouse is over it */
+}
+
+/* main oage style*/
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Set the main font for the whole page */
+    background-color: #f2a7b6d7; /* Set the page background color */
+    margin: 0; /* Remove the default outer space of the page */
+    padding: 0; /* Remove the default inner space of the page */
+}
+/* main reading style */
+h1{
+    text-align: center;  /* Center the main heading */
+    color: #8b0000;  /* the heading color */
+    margin-top: 30px; /* Add space above the heading */
+    margin-bottom: 15px;/* Add space below the heading */
+    font-size: 30px; /* Set the size of the heading */
+}
+
+
+/* Main text container style for headings and paragraphs */
+h1,
+p {
+    max-width: 800px; /*it's the maximum width — even if the screen is large, the text won't take up the full width, it'll stay organized*/
+    margin-left: auto; /* Center the text block horizontally */
+    margin-right: auto; /* Center the text block horizontally */
+}
+
+/* i wanna paragraph style */
+p{
+    text-align: center;  /* Center the paragraph text */
+    color: #333333; /* Set the paragraph text color */
+    padding: 0 20px;  /* Add space on the left and right side of the paragraph */
+    line-height: 1.6; /*this is to fix the spacing between one line of text and another*/
+    margin-bottom: 15px; /* Add space below each paragraph */
+    font-size: 18px;  /* Set the size of the paragraph text */
+}
+
+/*now create css for images */
+.gallery-images {
+    text-align: center; /* Center the images inside the gallery container */
+}
+
+/* here to do individual gallery image style*/
+.gallery-images img{
+    margin: 10px; /*Create space around each image.*/
+    width: 220px; /* the width of each gallery image */
+    height: 320px; /*height of each gallery image */
+    object-fit: cover; /* Make the image fill the box without stretching */
+    border-radius: 10px; /*Round the corners of the image.It gives it a softer, more delicate look.*/
+   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12); /*Create a very light shadow to make it stand out a little from the page.i saw*/
+   /*I searched on Google and then gave a prompt to find out what the command was.*/
+   transition: 0.3s; /* Make hover effects change smoothly */
+}
+
+.gallery-images img:hover { /* image hover effect*/
+    transform: scale(1.03); /* Make the image slightly bigger when the mouse is over it */
+}
+
+/* home page logo here*/
+.home-logo {
+    display: block; /*Make the image behave like a block element*/
+    margin: 20px auto 15px auto;  /*center thr logo and add space around it*/
+    border-radius: 8px; /* Round the corners of the logo */
+    box-shadow: 4px 4px 12px lightgray; /* Add a soft shadow around the logo */
+    max-width: 240px;  /* Set the maximum width of the logo */
+}
+
+
+form{
+    text-align: center; /* Center the form content */
+    margin-top: 20px;/* Add space above the form */
+    margin-bottom: 40px;/* Add space below the form */
+}
+
+/*text area style*/
+input {
+    width: 250px;/* Set the width of the input fields */
+    padding: 8px;/* Add inner space inside the input fields */
+    margin-top: 5px;/* Add space above each input field */
+    border: 1px solid #cccccc;/* Add a light border around the input fields */
+    border-radius: 5px;/* Round the corners of the input fields */
+
+    
+}
+
+textarea{
+    width: 350px;
+    height: 100px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+button{
+    padding: 15px 30px;
+    background-color: #a31a51;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 300px;
+    cursor: pointer; /* Show a pointer cursor when the mouse is over the button */
+}
+
+}
+
+button:hover {
+    background-color: #8b0000;  /* Change the button color when the mouse is over it */
+}
+
+
+/*contact form labels styles */
+label{
+    display: inline-block;  /* Make the label behave like an inline block element */
+    width: 160px;
+    text-align: right;
+    margin-right: 10px; /* here space between the label and the field */
+}
+
+/* Contact form container style */
+.contact-form {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Contact form label style */
+.contact-form label {
+    display: block; /* Put each label on its own line */
+    width: 380px; /* Center the label and add space below it */
+    margin: 0 auto 6px auto;
+    text-align: left;
+    font-weight: bold;
+    color: #5c1f2d;
+}
+
+/* Contact form input style */
+.contact-form input {
+    display: block;
+    width: 380px;
+    margin: 0 auto 10px auto;
+}
+
+/* Contact form textarea style */
+.contact-form textarea {
+    display: block;
+    width: 380px;
+    height: 130px;
+    margin: 0 auto 10px auto;
+}
+
+/* Contact form button style */
+.contact-form button {
+    margin-top: 10px;
+}
+
+/* About page content box style */
+.about-content {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 35px 30px;
+    background-color: rgba(255,245,247,0.75); /* Add a soft light background to the box */
+    border-radius: 14px; /* Round the corners of the box */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* About page links style */
+.about-content a {
+    color: #8b0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* About page links hover effect */
+.about-content a:hover {
+    text-decoration: underline; /* Show underline when the mouse is over the links */
+}
+
+
+/* Home page content style */
+.home-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* to style home decorative side images style */
+.home-side-image {
+    position: fixed;
+    top: 200px;
+    width: 300px;
+    opacity: 0.50;
+    z-index: -1; /*send the image to the back of the content.*/
+}
+
+/* Left decorative image position */
+.left-image {
+    left: 20px;
+}
+
+/* Right decorative image position */
+.right-image {
+    right: 20px;
+}
