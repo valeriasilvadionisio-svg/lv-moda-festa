@@ -7,6 +7,10 @@ const express = require("express");
 // This is useful on Mac and Windows because file paths can be different.
 const path = require("path");
 
+// I import my database connection file
+const connection = require("./database");
+
+
 // I create the Express application.
 // The variable app will be used to define routes and server settings.
 const app = express();
