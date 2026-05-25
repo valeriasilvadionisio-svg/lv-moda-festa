@@ -35,6 +35,32 @@ app.get("/", (req, res) => {
 
 });
 
+// This route gets all products from the MySQL database
+// When I open http://localhost:3000/products,
+// the server will ask the database for all dresses and return them as JSON.
+app.get("/products", (req, res) => {
+
+    // I write my SQL query to select all products from the products table
+    const sql = "SELECT * FROM products";
+
+    // I send the SQL query to MySQL using my connection
+    connection.query(sql, (error, results) => {
+
+        // If something goes wrong, I show the error and send an error response
+        if (error) {
+            console.log("Error fetching products from database");
+            console.log(error);
+            res.status(500).send("Database error");
+            return;
+        }
+
+        // If everything works, I send the products back to the browser as JSON
+        res.json(results);
+
+    });
+
+});
+
 // This starts the server.
 // app.listen keeps the server running and waiting for browser requests.
 app.listen(PORT, () => {
