@@ -13,11 +13,17 @@
     <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-    <a href="gallery.html">Gallery</a>
+
+    <!-- 
+    In CA1, this page worked like a static image gallery.
+    In CA2, the page now loads products dynamically from the MySQL database.
+    Because of that, I renamed the navigation section from Gallery to Products.
+    -->
+    <a href="gallery.html">Products</a>
     <a href="contact.html">Contact</a>     
     </nav>
 
-    <h1>Gallery</h1> <!--main page title-->
+    <h1>Products</h1> <!--main page title-->
     <p>Explore our elegant party dresses for special occasions</p>
     <!-- Gallery support text -->
 <p>Our collection includes elegant looks for weddings, birthday celebrations, prom nights, and other special events.</p>
@@ -43,6 +49,11 @@
         JavaScript will later fill this space with product cards from the database.
     -->
     <div id="products-container" class="products-container"></div>
+    <!-- 
+    This button takes the user to the cart page.
+    I keep it here because the user may want to continue shopping first
+    and only view the cart when they are ready.-->
+    <a href="cart.html" class="view-cart-button">View Cart</a>
 
 </section>
 

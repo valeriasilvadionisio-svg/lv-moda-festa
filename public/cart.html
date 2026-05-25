@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - LV Moda Festa</title>
+
+    <!-- I connect the CSS file to keep the same design across the website -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation menu used to move between the website pages -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Main cart section -->
+    <section class="cart-section">
+
+        <!-- This page shows the products added by the user -->
+        <h1>Your Shopping Cart</h1>
+
+        <!-- JavaScript will display the cart items inside this div -->
+        <div id="cart-container"></div>
+
+        <!-- JavaScript will calculate and display the total price here -->
+        <h2 id="cart-total">Total: €0.00</h2>
+
+        <!-- This button will later take the user to the checkout page -->
+        <a href="checkout.html" class="checkout-button">Proceed to Checkout</a>
+
+    </section>
+
+    <!-- I connect JavaScript because the cart will be loaded dynamically -->
+    <script src="script.js"></script>
+
+</body>
+</html>

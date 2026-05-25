@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - LV Moda Festa</title>
+
+    <!-- I connect the CSS file to keep the same visual style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Website navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Checkout section -->
+    <section class="checkout-section">
+
+        <!-- Main page title -->
+        <h1>Checkout</h1>
+
+
+
+        <!-- 
+    This area shows the products that the user added to the cart.
+    It helps the customer review the order before placing it.
+     -->
+    <div id="checkout-summary"></div>
+
+        <!-- 
+            This form simulates the final order process.
+            I do not use a real payment system in this project.
+            The goal is to demonstrate a functional checkout structure.
+        -->
+        <form id="checkout-form">
+
+            <!-- Customer full name -->
+            <label for="customer-name">Full Name</label>
+            <input type="text" id="customer-name" required>
+
+            <!-- Customer email -->
+            <label for="customer-email">Email</label>
+            <input type="email" id="customer-email" required>
+
+            <!-- Delivery address -->
+            <label for="customer-address">Delivery Address</label>
+            <textarea id="customer-address" required></textarea>
+
+            <!-- Final order button -->
+            <button type="submit">Place Order</button>
+
+        </form>
+
+    </section>
+
+    <!-- I connect JavaScript for checkout validation -->
+    <script src="script.js"></script>
+
+</body>
+</html>

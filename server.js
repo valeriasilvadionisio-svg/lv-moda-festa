@@ -24,6 +24,10 @@ const PORT = 3000;
 // HTML files, CSS file, JavaScript file and images.
 app.use(express.static(path.join(__dirname, "public")));
 
+// I allow the server to read JSON data sent from the browser.
+// This is needed for the checkout form, because JavaScript will send order details to the server.
+app.use(express.json());
+
 // This is the main route of my website.
 // When the user visits http://localhost:3000,
 // the server sends the index.html file as the home page.
@@ -56,6 +60,33 @@ app.get("/products", (req, res) => {
 
         // If everything works, I send the products back to the browser as JSON
         res.json(results);
+
+    });
+
+});
+
+// This route receives checkout order details from the browser.
+// It saves the customer information and total price into the orders table.
+app.post("/checkout", (req, res) => {
+
+    // I get the order information sent by JavaScript from checkout.html.
+    const { customerName, customerEmail, customerAddress, totalPrice } = req.body;
+
+    // I prepare the SQL command to insert the order into the database.
+    const sql = "INSERT INTO orders (customer_name, customer_email, customer_address, total_price) VALUES (?, ?, ?, ?)";
+
+    // I send the data to MySQL.
+    connection.query(sql, [customerName, customerEmail, customerAddress, totalPrice], (error, results) => {
+
+        if (error) {
+            console.log("Error saving order");
+            console.log(error);
+            res.status(500).json({ message: "Order could not be saved" });
+            return;
+        }
+
+        // I send a success response back to the browser.
+        res.json({ message: "Order saved successfully" });
 
     });
 

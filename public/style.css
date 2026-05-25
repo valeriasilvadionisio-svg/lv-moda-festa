@@ -307,3 +307,85 @@ label{
 .product-card button:hover {
     background-color: #8f2d3d;
 }
+
+/* CART BUTTON */
+
+/* 
+   This styles the View Cart button on the products page.
+   It gives the user a clear way to open the cart when they are ready.
+*/
+.view-cart-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: #6b1f2b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* This changes the button colour when the user moves the mouse over it. */
+.view-cart-button:hover {
+    background-color: #8f2d3d;
+}
+
+/* CART AND CHEKCOUT PAGE*/
+
+/* 
+   This styles the cart and checkout pages.
+   I use a centered card layout to make the pages easier to read.
+*/
+.cart-section,
+.checkout-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* This styles each item displayed inside the shopping cart. */
+.cart-item {
+    margin: 15px 0;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* This styles the checkout form so the fields appear vertically. */
+#checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* This styles the checkout input fields and address box. */
+#checkout-form input,
+#checkout-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* This styles the checkout and remove buttons. */
+.checkout-button,
+#checkout-form button,
+.cart-item button {
+    padding: 10px 15px;
+    background-color: #6b1f2b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* This creates a hover effect for cart and checkout buttons. */
+.checkout-button:hover,
+#checkout-form button:hover,
+.cart-item button:hover {
+    background-color: #8f2d3d;
+}
