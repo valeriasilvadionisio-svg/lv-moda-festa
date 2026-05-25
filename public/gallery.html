@@ -24,17 +24,33 @@
 
 
 
-<!--Put it inside a “div” because, instead of leaving several loose images, they stay inside a box/container, which makes it easier to work with when editing in CSS.-->
-<div class="gallery-images"> 
-    <!--Dress images for the gallery page-->
-    <!-- img = add a image / src= is the file path / alt= is the alternative text for the image / width = sets a simples width -->
-    <img src="images/image pink.JPG" alt="pink party dress" width="300">
-    <img src="images/image.JPG" alt="Orange party dress" width="300">
-    <img src="images/image3.JPG" alt="Red party dress" width="300">
-    <img src="images/imageblue.JPG" alt="Blue party dress"  width="300">
-    <img src="images/imagegreen.jpg" alt="Green party dress"  width="300">
-    <img src="images/imageorange2.JPG" alt="Orange satin party dress" width="300">
-</div>
+
+   <!-- In CA1, I wrote the dress images directly in this HTML page using <img> tags. -->
+   <!-- For CA2, I am changing this page to be dynamic.
+   <!- This means the products will come from the MySQL database instead of being hardcoded here.-->
+
+   <!-- The images are NOT deleted from the project.-->
+   <!-- They are still saved inside the images folder.
+   <!-  The database stores the image file name, and JavaScript will use that name to display each dress.-->
+
+<section class="products-section">
+
+    <!-- This title introduces the product area of the website -->
+    <h1>Our Dresses</h1>
+
+    <!-- 
+        This empty div is important.
+        JavaScript will later fill this space with product cards from the database.
+    -->
+    <div id="products-container" class="products-container"></div>
+
+</section>
+
+<!-- 
+    I connect my JavaScript file here.
+    This file will fetch the products from the server and display them on the page.
+-->
+<script src="script.js"></script>
 
     </body>
 </html>

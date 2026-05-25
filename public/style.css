@@ -224,3 +224,86 @@ label{
 .right-image {
     right: 20px;
 }
+
+/* ------------------------------CA2--------------------------------*/
+
+/* 
+   This section styles the area where the products from the database appear.
+   The products are not written directly in the HTML anymore.
+   They are created by JavaScript and placed inside this section.
+*/
+.products-section {
+    padding: 30px;
+    text-align: center;
+}
+
+/* here container holds all product cards.
+   I use flex because it allows the cards to stay side by side.
+   flex-wrap allows the cards to move to the next line on smaller screens.
+*/
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* 
+   This styles each individual dress card.
+   The card contains the dress image, name, colour, size, price and button.
+*/
+.product-card {
+    width: 250px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 
+   To controls the product image size.
+   width: 100% makes the image fit inside the card.
+   height: 320px keeps all images the same height.
+   object-fit: cover crops the image nicely without stretching it.
+*/
+.product-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* This styles the product name inside each card. */
+.product-card h2 {
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+/* This styles the product information, such as colour, size and price. */
+.product-card p {
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+/* 
+   This styles the Add to Cart button.
+   It does not add the product to the cart yet.
+   Later, JavaScript will give this button functionality.
+*/
+.product-card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #6b1f2b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* This changes the button colour when the user moves the mouse over it. */
+.product-card button:hover {
+    background-color: #8f2d3d;
+}
