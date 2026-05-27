@@ -25,8 +25,18 @@ INSERT INTO products (name, colour, size, price, image)
 VALUES
 ('Emerald Elegance Dress', 'Green', 'M', 299.99, 'imagegreen.jpg'),
 
-('Pink Glamour Dress', 'Pink', 'S', 349.99, 'imagepink.JPG'),
+('Pink Glamour Dress', 'Pink', 'S', 349.99, 'image-pink.jpg'),
 
-('Royal Blue Dress', 'Blue', 'L', 399.99, 'imageblue.JPG'),
+('Royal Blue Dress', 'Blue', 'L', 399.99, 'imageblue.jpg'),
 
-('Classic Black Dress', 'Black', 'M', 459.99, 'image3.JPG');
+('Classic Black Dress', 'Black', 'M', 459.99, 'image3.jpg');
+
+-- I create an orders table to store checkout orders
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_name VARCHAR(100),
+    customer_email VARCHAR(100),
+    customer_address VARCHAR(255),
+    total_price DECIMAL(10,2),
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

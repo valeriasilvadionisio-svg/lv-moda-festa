@@ -9,19 +9,24 @@
     <link rel="stylesheet" href="style.css">
     </head>
 <body>
+
+        <!-- 
+    I added this background shape to make the products page look softer and more modern.
+    The transparent logo background also helps reinforce the boutique brand identity.
+     -->
+    <div class="products-background-shape"></div>
+
+
     <!-- here to create the website nav area/ <a = link / href = link destination.-->
     <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
-
-    <!-- 
-    In CA1, this page worked like a static image gallery.
-    In CA2, the page now loads products dynamically from the MySQL database.
-    Because of that, I renamed the navigation section from Gallery to Products.
-    -->
     <a href="gallery.html">Products</a>
-    <a href="contact.html">Contact</a>     
-    </nav>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+    </nav>   
+    
 
     <h1>Products</h1> <!--main page title-->
     <p>Explore our elegant party dresses for special occasions</p>
@@ -42,7 +47,11 @@
 <section class="products-section">
 
     <!-- This title introduces the product area of the website -->
-    <h1>Our Dresses</h1>
+    <h1>Our Dresses Collection</h1>
+
+    <p class="products-intro">
+    Browse our selected party dresses and add your favourite pieces to the cart.
+    </p>
 
     <!-- 
         This empty div is important.
@@ -63,5 +72,17 @@
 -->
 <script src="script.js"></script>
 
+<!-- 
+    I added a global footer to keep the website consistent across all pages.
+    This improves the structure of the website and addresses the CA1 feedback
+    about needing one unified footer area.
+-->
+<footer>
+    <p>&copy; 2026 Léia Vieira Moda Festa. All rights reserved.</p>
+    <p>Elegant party dresses with worldwide shipping.</p>
+</footer>
+
     </body>
+
+
 </html>

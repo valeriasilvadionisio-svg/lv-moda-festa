@@ -352,3 +352,64 @@ fetch("/checkout", {
 });
     });
 }
+
+//////////////////////////////////
+// DISPLAY SAVED ORDERS
+
+
+// I select the orders container from orders.html.
+let ordersContainer = document.getElementById("orders-container");
+
+// I check if the orders container exists before running this code.
+if (ordersContainer) {
+
+    // I request the saved orders from my Express server.
+    fetch("/orders")
+
+        // I convert the response into JSON format.
+        .then(response => response.json())
+
+        // I receive the orders from MySQL.
+        .then(orders => {
+
+            // I clear the container before displaying orders.
+            ordersContainer.innerHTML = "";
+
+            // If there are no orders, I show a message.
+            if (orders.length === 0) {
+                ordersContainer.innerHTML = "<p>No orders found.</p>";
+                return;
+            }
+
+            // I display each saved order.
+            orders.forEach(order => {
+
+                // I create one div for each order.
+                let orderCard = document.createElement("div");
+
+                // I add a CSS class for styling later.
+                orderCard.className = "order-card";
+
+                // I create the order information.
+                orderCard.innerHTML = `
+                    <h2>Order #${order.order_id}</h2>
+                    <p><strong>Name:</strong> ${order.customer_name}</p>
+                    <p><strong>Email:</strong> ${order.customer_email}</p>
+                    <p><strong>Address:</strong> ${order.customer_address}</p>
+                    <p><strong>Total:</strong> €${order.total_price}</p>
+                    <p><strong>Date:</strong> ${new Date(order.order_date).toLocaleString()}</p>
+                `;
+
+                // I add the order card to the page.
+                ordersContainer.appendChild(orderCard);
+
+            });
+
+        })
+
+        // If something goes wrong, I show the error in the console.
+        .catch(error => {
+            console.log("Error loading orders:", error);
+        });
+
+}

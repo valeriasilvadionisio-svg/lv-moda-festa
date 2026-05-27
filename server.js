@@ -92,6 +92,29 @@ app.post("/checkout", (req, res) => {
 
 });
 
+// This route gets all saved orders from the MySQL database.
+// It allows the orders.html page to display the orders created at checkout.
+app.get("/orders", (req, res) => {
+
+    // I select all orders and show the newest orders first.
+    const sql = "SELECT * FROM orders ORDER BY order_date DESC";
+
+    connection.query(sql, (error, results) => {
+
+        if (error) {
+            console.log("Error fetching orders");
+            console.log(error);
+            res.status(500).json({ message: "Could not load orders" });
+            return;
+        }
+
+        // I send the orders back to the browser as JSON.
+        res.json(results);
+
+    });
+
+});
+
 // This starts the server.
 // app.listen keeps the server running and waiting for browser requests.
 app.listen(PORT, () => {

@@ -14,26 +14,90 @@
     <!-- here to create the website nav area/ <a = link / href = link destination.-->
      <!-- On every page, I’m adding the navigation area because the user needs to be able to navigate through the site from any page.-->
     <nav>
+    <img src="images/logo.png" alt="Léia Vieira logo" class="nav-logo">
+
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="gallery.html">Products</a>
-    <a href="contact.html">Contact</a>    
-    
-    </nav>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+    <a href="orders.html">Orders</a>
+</nav>
 
-    <img src="images/img home1.jpg" alt="dress decoration" class="home-side-image left-image">
-    <img src="images/imag home2.jpg" alt="dresses" class="home-side-image right-image">
+    <!----------------------------------->
+  <!-- 
+    I created this hero section to modernize the homepage design
+    and make the website look more like a real online fashion store.
 
-    <div class="home-content">
-    <!--page logo / how to do -->
-    <img src="images/logo.png" alt="LV Moda Festa logo" width="250" class="home-logo">
+    I decided to use a large featured image because fashion websites normally
+    use strong visual elements to attract the customer’s attention quickly.
 
-    <h1>Elegant Party Dresses for Special Occasions</h1>
-    <p>Leia Vieira Moda Festa is a Brazilian boutique offering elegant dresses for weddings, proms, birthdays, and special events. We help customers find stylish party dresses with personal service and worldwide shipping.</p>
-    
- </div>
+    I also added a clear text section to introduce the boutique and explain
+    the services offered by the business.
+
+    The “Shop Now” button helps guide the user directly to the products page,
+    improving navigation and user interaction.
+
+    Separating the hero section into text and image containers also makes
+    the layout easier to organize and style with CSS flexbox.
+-->
+<section class="hero-section">
+
+    <div class="hero-video">
+    <video autoplay muted loop playsinline>
+        <source src="video/fashion-dress.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <!-- 
+        I used this container to group all the main homepage text together.
+        Keeping the text inside its own div helps me control alignment,
+        spacing and responsive design more easily in CSS.
+    -->
+    <div class="hero-text">
+
+        <p class="hero-small-text">WELCOME TO LÉIA VIEIRA</p>
+
+        <h1>Elegance in every detail.</h1>
+
+        <p>
+            Discover elegant party dresses for weddings, proms, birthdays and special events.
+            Our boutique offers stylish pieces with personal service and worldwide shipping.
+        </p>
+
+        <!-- 
+            I added this call-to-action button to encourage users
+            to explore the products page directly from the homepage.
+        -->
+        <a href="gallery.html" class="hero-button">Shop Now</a>
+
+        
+
+    </div>
+
+    <!-- 
+        I used this container to display the featured homepage image.
+        The dress image helps reinforce the boutique fashion identity
+        and creates stronger visual impact for the homepage design.
+    -->
+    <div class="hero-image">
+
+        <img src="images/pink-satin-dress.jpg" alt="Pink satin party dress">
+
+    </div>
+
+</section>
 
 
-    
+    <!-- 
+    I added a global footer to keep the website consistent across all pages.
+    This improves the structure of the website and addresses the CA1 feedback
+    about needing one unified footer area.
+-->
+<footer>
+    <p>&copy; 2026 Léia Vieira Moda Festa. All rights reserved.</p>
+    <p>Elegant party dresses with worldwide shipping.</p>
+</footer>
+
 </body>
 </html>

@@ -22,12 +22,19 @@ nav a:hover{
     color: #8b0000; /* Change the link color when the mouse is over it */
 }
 
+.nav-logo {
+    width: 65px;
+    height: auto;
+    margin-right: 35px;
+}
+
 /* main oage style*/
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Set the main font for the whole page */
-    background-color: #f2a7b6d7; /* Set the page background color */
+    background-color: #fff3f5; /* Set the page background color */
     margin: 0; /* Remove the default outer space of the page */
     padding: 0; /* Remove the default inner space of the page */
+    overflow-x: hidden;
 }
 /* main reading style */
 h1{
@@ -232,80 +239,127 @@ label{
    The products are not written directly in the HTML anymore.
    They are created by JavaScript and placed inside this section.
 */
+
+/* 
+   I use this soft background shape only as decoration.
+   I keep it inside the page width to avoid horizontal scrolling.
+*/
+.products-background-shape {
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background-color: rgba(248, 220, 228, 0.35);
+    border-radius: 50%;
+    top: 220px;
+    right: 40px;
+    z-index: -1;
+}
+
+
+.products-intro {
+    font-size: 18px;
+    color: #5e4b52;
+    margin-bottom: 25px;
+}
+
 .products-section {
     padding: 30px;
     text-align: center;
 }
 
-/* here container holds all product cards.
-   I use flex because it allows the cards to stay side by side.
-   flex-wrap allows the cards to move to the next line on smaller screens.
+/* 
+   I use this container to organise all product cards in rows.
+   flex-wrap allows the cards to move to the next line on smaller screens,
+   which improves responsiveness and prevents layout breaking.
 */
 .products-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    margin-top: 25px;
+    gap: 35px;
+    margin-top: 40px;
 }
 
 /* 
-   This styles each individual dress card.
-   The card contains the dress image, name, colour, size, price and button.
+   I style each product card to look more like an online boutique card.
+   I keep a fixed width so the products stay aligned,
+   and I use border-radius and shadow to make the cards softer and more modern.
 */
 .product-card {
-    width: 250px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 270px;
+    padding: 18px;
+    border: 1px solid #f0d6dc;
+    border-radius: 20px;
+    background-color: #fffafa;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 /* 
-   To controls the product image size.
-   width: 100% makes the image fit inside the card.
-   height: 320px keeps all images the same height.
-   object-fit: cover crops the image nicely without stretching it.
+   I added a hover effect so the card moves slightly when the user interacts with it.
+   This makes the page feel more interactive and similar to modern e-commerce websites.
+*/
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(123, 16, 38, 0.18);
+}
+
+/* 
+   I control the product image size here because the database loads different dress photos.
+   width: 100% makes each image fit inside the product card.
+   height: 420px keeps all product images visually consistent.
+   object-fit: cover crops the image instead of stretching it, which avoids the image squishing problem mentioned in my CA1 feedback.
 */
 .product-card img {
     width: 100%;
-    height: 320px;
+    height: 420px;
     object-fit: cover;
-    border-radius: 10px;
-}
-
-/* This styles the product name inside each card. */
-.product-card h2 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-/* This styles the product information, such as colour, size and price. */
-.product-card p {
-    font-size: 15px;
-    margin: 6px 0;
+    border-radius: 15px;
+    margin-bottom: 15px;
 }
 
 /* 
-   This styles the Add to Cart button.
-   It does not add the product to the cart yet.
-   Later, JavaScript will give this button functionality.
+   I style the product name to make each dress title clear and easy to read.
+   The font size is bigger than the product details because the name is the main information.
 */
-.product-card button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #6b1f2b;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.product-card h2 {
+    font-size: 20px;
+    margin-top: 15px;
+    color: #2b1d22;
 }
 
-/* This changes the button colour when the user moves the mouse over it. */
+/* 
+   I style the product details, such as colour, size and price.
+   I keep this text smaller than the title to create a clear visual hierarchy.
+*/
+.product-card p {
+    font-size: 15px;
+    margin: 6px 0;
+    color: #5e4b52;
+}
+
+/* 
+   I style the Add to Cart button using the same burgundy colour palette as the rest of the website.
+   This keeps the design consistent and makes the button look like part of the boutique brand identity.
+*/
+.product-card button {
+    margin-top: 12px;
+    padding: 12px 20px;
+    background-color: #7b1026;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* 
+   I added a hover effect to make the button feel interactive.
+   This improves the user experience because the user can see that the button is clickable.
+*/
 .product-card button:hover {
-    background-color: #8f2d3d;
+    background-color: #a11d3a;
 }
 
 /* CART BUTTON */
@@ -388,4 +442,168 @@ label{
 #checkout-form button:hover,
 .cart-item button:hover {
     background-color: #8f2d3d;
+}
+
+/* STYLEEEEEEEEEE SITE*/
+
+//* 
+   I add the shop logo as a very light background watermark.
+   I keep the opacity low so it reinforces the brand identity
+   without making the main text difficult to read.
+*/
+body {
+    background-color: #fff3f5;
+    overflow-x: hidden;
+}
+
+/*------------------------*/
+/* ===============================
+   HERO SECTION - HOME PAGE
+/* 
+   I created this hero section using flexbox so the text and image
+   can stay side by side on larger screens.
+
+   I also added spacing and alignment rules to create a cleaner
+   and more modern e-commerce homepage layout.
+*/
+/* Main homepage hero section */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 50px 7%;
+}
+
+/* 
+   I use this container to control the text width and spacing.
+   This helps improve readability and visual balance.
+*/
+.hero-text {
+    flex: 1;
+    z-index: 2;
+    padding: 40px 30px;
+    border-radius: 28px;
+    text-align: center;
+}
+
+/* Small text above the main title */
+.hero-small-text {
+    letter-spacing: 3px;
+    color: #8f2d3d;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 
+   I increased the font size of the main heading
+   to create stronger visual impact on the homepage.
+*/
+/* Main homepage title */
+.hero-text h1 {
+    font-size: 44px;
+    line-height: 1.1;
+    color: #2b1d22;
+
+    margin-bottom: 25px;
+}
+
+/* Main paragraph text */
+/* Homepage description text */
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5e4b52;
+
+    margin-bottom: 35px;
+}
+
+/* 
+   I styled the Shop Now button to look more modern
+   and consistent with the boutique colour palette.
+*/
+/* Home button styling */
+.hero-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 35px;
+    background-color: #7b1026;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+
+    /* Smooth animation effect */
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.hero-button:hover {
+    background-color: #a11d3a;
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+/* 
+   I use this container to control the homepage image area.
+*/
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+   I added border-radius and shadow effects
+   to make the image look softer and more elegant.
+*/
+.hero-image img {
+    width: 100%;
+height: 520px;
+object-fit: cover;
+border-radius: 28px;
+box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+
+/* 
+   I created a global footer to keep all pages visually consistent.
+   It also gives the website a more complete and professional structure.
+*/
+footer {
+    margin-top: 60px;
+    padding: 25px;
+    background-color: #6b1f2b;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    color: white;
+    margin: 5px auto;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* VIDEO SECTION */
+
+/* I created this section to display a fashion showcase video.
+   The video helps improve the multimedia experience of the website
+   and makes the homepage feel more modern and interactive.*/
+
+
+.hero-video {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.16);
 }
