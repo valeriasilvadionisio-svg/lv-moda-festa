@@ -413,3 +413,22 @@ if (ordersContainer) {
         });
 
 }
+
+// ===============================
+// CART COUNT IN NAVIGATION
+// ===============================
+
+// I get the cart link from the navigation using its id.
+// This allows me to update the text and show how many products are in the cart.
+let cartNavLink = document.getElementById("cart-nav");
+
+// I check if the cart link exists before changing it.
+// This prevents errors if one page does not have this element.
+if (cartNavLink) {
+
+    // I get the cart saved in localStorage.
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // I show the number of products beside the cart text.
+    cartNavLink.textContent = "🛍️ Cart (" + cart.length + ")";
+}

@@ -1,32 +1,78 @@
-/*Nav menu now */
+/* NAVIGATION BAR */
 
-/*to select nav*/
-nav {
-    background-color: #f8d7da; 
-    padding: 15px; /*create inner spacing so the menu doenst fell too cramped */
-    text-align: center; /*centering the links */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* add a soft shadow under the navigation bar*/
+/* 
+   I use the main navigation bar to keep the website pages connected.
+   I changed it from a simple centered menu to a three-part layout:
+   logo on the left, page links in the middle, and the cart button on the right.
+   This makes the website look more like a real e-commerce store.
+*/
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 7%;
+    background-color: #fff5f7;
+    box-shadow: 0 2px 10px rgba(123, 16, 38, 0.08);
 }
 
-/*nav links, select de <a> links that are inside the nav*/
-nav a {
-    color: #5c1f2d; /* to set the text color of the navigation links */
-    text-decoration: none; /*Remove the underline from the text*/
-    margin: 18px; /*create space between the links*/
-    font-weight: bold; /* Make the navigation text bold */
-    font-size: 18px; /*set the size*/
+/* 
+   I use this area to hold the brand logo inside the navigation bar.
+*/
+.nav-brand {
+    display: flex;
+    align-items: center;
 }
 
-/*navigation hover effect, i saw the prompt */
-nav a:hover{
-    color: #8b0000; /* Change the link color when the mouse is over it */
-}
-
+/* 
+   I keep the logo small so it supports the brand identity
+   without taking too much space from the navigation menu.
+*/
 .nav-logo {
-    width: 65px;
+    width: 70px;
     height: auto;
-    margin-right: 35px;
 }
+
+/* 
+   I use flexbox here to keep the navigation links side by side
+   with even spacing between them.
+*/
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+/* 
+   I style both the normal navigation links and the cart link
+   with the same font style to keep the website consistent.
+*/
+.nav-links a,
+.cart-link {
+    color: #5c1f2d;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 
+   I style the cart as a button because it is an important e-commerce action.
+   This makes it easier for the user to find the basket.
+*/
+.cart-link {
+    background-color: #7b1026;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+}
+
+/* 
+   I added this hover effect to show the user that the links are clickable.
+*/
+.nav-links a:hover {
+    color: #a11d3a;
+}
+
+
+
 
 /* main oage style*/
 body{
@@ -486,6 +532,9 @@ body {
     padding: 40px 30px;
     border-radius: 28px;
     text-align: center;
+    background-color: rgba(255, 250, 252, 0.65);
+    backdrop-filter: blur(6px);
+box-shadow: 0 10px 30px rgba(123, 16, 38, 0.08);
 }
 
 /* Small text above the main title */
@@ -606,4 +655,40 @@ footer p {
     object-fit: cover;
     border-radius: 28px;
     box-shadow: 0px 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+/* 
+   I added this media query to improve the layout on smaller screens.
+   When the screen is narrow, the hero section changes from columns to a vertical layout.
+   This prevents the video, text and image from becoming squeezed.
+*/
+@media (max-width: 900px) {
+
+    .hero-section {
+        grid-template-columns: 1fr;
+        padding: 35px 6%;
+    }
+
+    .hero-video video,
+    .hero-image img {
+        height: 420px;
+    }
+
+    .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .products-container {
+        gap: 25px;
+    }
 }

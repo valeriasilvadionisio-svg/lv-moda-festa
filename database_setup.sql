@@ -1,4 +1,8 @@
 -- I create a products table to store the dresses sold on the website
+
+CREATE DATABASE IF NOT EXISTS lvmodafesta;
+USE lvmodafesta;
+
 CREATE TABLE products (
     -- Unique ID for each product
     product_id INT PRIMARY KEY AUTO_INCREMENT,
