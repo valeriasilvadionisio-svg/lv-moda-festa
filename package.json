@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/valeriasilvadionisio-svg/LVMODAFESTA_CA2#readme",
   "dependencies": {
+    "dotenv": "^16.6.1",
     "express": "^5.2.1",
     "mysql2": "^3.22.3"
   }

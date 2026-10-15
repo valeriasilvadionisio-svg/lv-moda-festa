@@ -1,3 +1,6 @@
+// I load the database settings from the .env file, so the password is not written in the code
+require("dotenv").config();
+
 // I import the MySQL2 library to connect my Node.js server to MySQL
 const mysql = require("mysql2");
 
@@ -5,16 +8,16 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
 
     // My local MySQL server
-    host: "localhost",
+    host: process.env.DB_HOST || "localhost",
 
     // Default MySQL username
-    user: "root",
+    user: process.env.DB_USER || "root",
 
-    // My MySQL password
-    password: "Estados581358",
+    // My MySQL password (stored in the .env file)
+    password: process.env.DB_PASSWORD,
 
     // Database created for this CA2 project
-    database: "lvmodafesta"
+    database: process.env.DB_NAME || "lvmodafesta"
 
 });
 

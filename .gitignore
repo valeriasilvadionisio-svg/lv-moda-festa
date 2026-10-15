@@ -1,2 +1,8 @@
+# Dependencies
 node_modules/
+
+# Local settings with the database password
+.env
+
+# macOS system files
 .DS_Store
